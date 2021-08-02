@@ -70,4 +70,3 @@ nudepy
 motor
 cloudscraper
 opencv-python-headless
-open
