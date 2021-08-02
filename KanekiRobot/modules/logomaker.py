@@ -27,13 +27,13 @@ async def lego(event):
     x = (image_widthz-w)/2
     y= ((image_heightz-h)/2+6)
     draw.text((x, y), text, font=font, fill="black", stroke_width=4, stroke_fill="white")
-    fname2 = "MemekLebar.png"
+    fname2 = "LogoByKaneki.png"
     img.save(fname2, "png")
     await memek.edit("`Uploading`")
     await tbot.send_file(event.chat_id, fname2, caption="Made By KanekiRobot")
     if os.path.exists(fname2):
             os.remove(fname2)
-            await memek.delete()
+            await Kaneki.delete()
  except Exception as e:
    await event.reply(f'Error Report @kanekisupport, {e}')
 
@@ -61,13 +61,13 @@ async def lego(event):
     x = (image_widthz-w)/2
     y= ((image_heightz-h)/2+6)
     draw.text((x, y), text, font=font, fill="black", stroke_width=4, stroke_fill="white")
-    fname2 = "MemekLebar.png"
+    fname2 = "LogoByKaneki.png"
     img.save(fname2, "png")
     await memek.edit("`Uploading`")
     await tbot.send_file(event.chat_id, fname2, caption="Made By KanekiRobot")
     if os.path.exists(fname2):
             os.remove(fname2)
-            await memek.delete()
+            await Kaneki.delete()
  except Exception as e:
    await event.reply(f'Error Report @kanekisupport, {e}')
 
