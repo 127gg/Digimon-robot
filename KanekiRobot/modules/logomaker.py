@@ -33,7 +33,7 @@ async def lego(event):
     await tbot.send_file(event.chat_id, fname2, caption="Made By KanekiRobot")
     if os.path.exists(fname2):
             os.remove(fname2)
-            await Kaneki.delete()
+            await memek.delete()
  except Exception as e:
    await event.reply(f'Error Report @kanekisupport, {e}')
 
@@ -67,7 +67,7 @@ async def lego(event):
     await tbot.send_file(event.chat_id, fname2, caption="Made By KanekiRobot")
     if os.path.exists(fname2):
             os.remove(fname2)
-            await Kaneki.delete()
+            await memek.delete()
  except Exception as e:
    await event.reply(f'Error Report @kanekisupport, {e}')
 
