@@ -1,6 +1,7 @@
 from pyrogram import filters
 from KanekiRobot import pbot as app
 from KanekiRobot.utils.errors import capture_err
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from KanekiRobot.utils.http import get
 
 
