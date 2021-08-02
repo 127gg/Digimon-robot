@@ -24,7 +24,10 @@ async def repo(_, message):
 | Contributors |
 ----------------```
 {list_of_users}
-[💾 Repositories](https://github.com/rizkyoye/Kaneki-robot)"""
+InlineKeyboardMarkup(
+                        [[InlineKeyboardButton(text="[💾 Repository ]", url=f"https://github.com/rizkyoye/Kaneki-robot")]]
+                    ),
+                )"""
     await app.send_message(
         message.chat.id, text=text, disable_web_page_preview=True
     )
