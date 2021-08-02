@@ -13,7 +13,7 @@ async def lego(event):
  try:
     memek = await event.reply('Creating your logo...wait!')
     text = event.pattern_match.group(1)
-    img = Image.open('../KanekiRobot/resources/blackbg.jpg')
+    img = Image.open('./KanekiRobot/resources/blackbg.jpg')
     draw = ImageDraw.Draw(img)
     image_widthz, image_heightz = img.size
     pointsize = 500
@@ -47,7 +47,7 @@ async def lego(event):
  try:
     memek = await event.reply('Creating your logo...wait!')
     text = event.pattern_match.group(1)
-    img = Image.open('../KanekiRobot/resources/blackbg.jpg')
+    img = Image.open('./KanekiRobot/resources/blackbg.jpg')
     draw = ImageDraw.Draw(img)
     image_widthz, image_heightz = img.size
     pointsize = 500
