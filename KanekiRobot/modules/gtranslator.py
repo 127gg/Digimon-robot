@@ -1,5 +1,5 @@
 from emoji import UNICODE_EMOJI
-from googletrans import Translator, LANGUAGES
+from google_trans_new import Translator, LANGUAGES
 
 from telegram import Bot, Update, ParseMode
 from telegram.ext import run_async
