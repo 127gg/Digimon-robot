@@ -170,7 +170,7 @@ else:
     SPAMWATCH_API = Config.SPAMWATCH_API
     INFOPIC = Config.INFOPIC
     REDIS_URL = Config.REDIS_URL
-    BRAINLY_API = Config.get.BRAINLY_API
+    BRAINLY_API = Config.BRAINLY_API
 
     
     try:
