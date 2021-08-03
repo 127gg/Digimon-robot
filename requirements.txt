@@ -70,3 +70,5 @@ nudepy
 motor
 cloudscraper
 opencv-python-headless
+googletrans==4.0.0-rc1
+google-trans-new==1.1.9
