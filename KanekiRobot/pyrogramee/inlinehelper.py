@@ -21,7 +21,8 @@ from search_engine_parser import GoogleSearch
 
 from KanekiRobot import BOT_USERNAME, OWNER_ID
 from KanekiRobot.conf import get_str_key
-from KanekiRobot.more.pluginhelpers import convert_seconds_to_minutes as time_convert
+from KanekiRobot.pyrogramee.pluginhelpers import convert_seconds_to_minutes as time_convert
+from KanekiRobot.pyrogramee.pluginhelpers import fetch
 from KanekiRobot.pyrogramee.pyrogram import pbot
 from KanekiRobot import arq
 
