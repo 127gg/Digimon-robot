@@ -41,7 +41,7 @@ en_chats = []
 # AI Chat (C) 2020-2021 by @InukaAsith
 
 
-@kaneki.on_message(filters.command("chatbot") & ~filters.edited & ~filters.bot)
+@Kaneki.on_message(filters.command("chatbot") & ~filters.edited & ~filters.bot)
 @admins_only
 async def hmm(_, message):
     global asuna_chats
@@ -85,7 +85,7 @@ async def hmm(_, message):
         )
 
 
-@kaneki.on_message(
+@Kaneki.on_message(
     filters.text & filters.reply & ~filters.bot & ~filters.via_bot & ~filters.forwarded,
     group=2,
 )
@@ -189,7 +189,7 @@ async def hmm(client, message):
             print(e)
 
 
-@kaneki.on_message(filters.text & filters.private & filters.reply & ~filters.bot)
+@Kaneki.on_message(filters.text & filters.private & filters.reply & ~filters.bot)
 async def inuka(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
