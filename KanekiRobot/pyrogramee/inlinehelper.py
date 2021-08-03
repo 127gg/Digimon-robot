@@ -22,7 +22,6 @@ from search_engine_parser import GoogleSearch
 from KanekiRobot import BOT_USERNAME, OWNER_ID
 from KanekiRobot.conf import get_str_key
 from KanekiRobot.more.pluginhelpers import convert_seconds_to_minutes as time_convert
-from KanekiRobot.more.pluginhelpers import fetch
 from KanekiRobot.pyrogramee.pyrogram import pbot
 from KanekiRobot import arq
 
@@ -86,7 +85,7 @@ async def alive_function(answers):
 **Pyrogram:** `{pyrover}`
 **MongoDB:** `{mongover}`
 **Platform:** `{sys.platform}`
-**Profiles:** [BOT](t.me/{BOT_USERNAME}) | [UBOT](t.me/xflicks)
+**Profiles:** [BOT](t.me/{BOT_USERNAME}) | [UBOT](t.me/rizexx)
 """
     answers.append(
         InlineQueryResultArticle(
