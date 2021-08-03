@@ -76,6 +76,7 @@ if ENV:
     DONATION_LINK = os.environ.get("DONATION_LINK")
     HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
     HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
+    BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./")
     OPENWEATHERMAP_ID = os.environ.get("OPENWEATHERMAP_ID", None)
     VIRUS_API_KEY = os.environ.get("VIRUS_API_KEY", None)
@@ -148,6 +149,7 @@ else:
     MONGO_DB_URI = Config.MONGO_DB_URI
     HEROKU_API_KEY = Config.HEROKU_API_KEY
     HEROKU_APP_NAME = Config.HEROKU_APP_NAME
+    BOT_USERNAME = Config.BOT_USERNAME
     TEMP_DOWNLOAD_DIRECTORY = Config.TEMP_DOWNLOAD_DIRECTORY
     OPENWEATHERMAP_ID = Config.OPENWEATHERMAP_ID
     BOT_ID = Config.BOT_ID
