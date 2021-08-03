@@ -79,10 +79,10 @@ def get_reload(update: Update, context: CallbackContext):
 
 
     RELOAD_HANDLER = DisableAbleCommandHandler("reload", reload)
-CHANGE_QUOTE = CallbackQueryHandler(
-    change_quote, pattern=r"change_.*")
-QUOTE_CHANGE = CallbackQueryHandler(
-    change_quote, pattern=r"quote_.*")
+CHANGE_RELOAD = CallbackQueryHandler(
+    change_reload, pattern=r"reload_.*")
+RELOAD_CHANGE = CallbackQueryHandler(
+    change_quote, pattern=r"reload_.*")
 dispatcher.add_handler(RELOAD_QUOTE)
 
 __command_list__ = [
