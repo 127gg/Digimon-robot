@@ -21,7 +21,7 @@ aiohttp
 Pillow>=4.2.0
 CurrencyConverter
 #googletrans
-google_trans_new
+google-trans-new==1.1.9
 jikanpy
 speedtest-cli
 coffeehouse==2.2.4
@@ -71,4 +71,3 @@ motor
 cloudscraper
 opencv-python-headless
 googletrans==4.0.0-rc1
-google-trans-new==1.1.9
