@@ -13,7 +13,7 @@ from pyrogram import Client
 from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import Chat, Message, User
 
-from KanekiRobot import OWNER_ID, EVENT_LOGS
+from KanekiRobot import OWNER_ID, GBAN_LOGS
 from KanekiRobot.pyrogramee.pyrogram import pbot
 
 
