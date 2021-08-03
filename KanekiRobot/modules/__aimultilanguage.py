@@ -24,10 +24,10 @@ from googletrans import Translator as google_translator
 from pyrogram import filters
 
 from KanekiRobot import BOT_ID
-from KanekiRobot.db.mongo_helpers.aichat import add_chat, get_session, remove_chat
-from KanekiRobot.function.inlinehelper import arq
-from KanekiRobot.function.pluginhelpers import admins_only, edit_or_reply
-from KanekiRobot.services.pyrogram import pbot as kaneki
+from KanekiRobot.helper_extra.aichat import add_chat, get_session, remove_chat
+from KanekiRobot.pyrogramee.inlinehelper import arq
+from KanekiRobot.pyrogramee.pluginhelpers import admins_only, edit_or_reply
+from KanekiRobot.pyrogramee.pyrogram import pbot as kaneki
 
 translator = google_translator()
 
@@ -56,6 +56,7 @@ async def fetch(url):
         return
 
 
+BOT_ID = 1844724306
 Kaneki_chats = []
 en_chats = []
 # AI Chat (C) 2020-2021 by @InukaAsith
