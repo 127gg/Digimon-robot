@@ -1,50 +1,72 @@
-#    Copyright (C) 2020-2021 by @AmarnathCdj & @InukaAsith
-#    Chatbot system written by @AmarnathCdj databse added and recoded for pyrogram by @InukaAsith
-#    This programme is a part of Kaneki (TG bot) project
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as
+# published by the Free Software Foundation, either version 3 of the
+# License, or (at your option) any later version.
 
-#    Kang with the credits
-#    Special credits to @AmarnathCdj
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 import re
 
 import emoji
-import requests
 
 url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
-from google_trans_new import google_translator
+import re
+
+import aiohttp
+
+# from google_trans_new import google_translator
+from googletrans import Translator as google_translator
 from pyrogram import filters
 
-from KanekiRobot.helper_extra.aichat import add_chat, get_session, remove_chat
-from KanekiRobot.pyrogramee.pluginshelper import admins_only, edit_or_reply
-from KanekiRobot import pbot as Kaneki
+from KanekiRobot import BOT_ID
+from KanekiRobot.db.mongo_helpers.aichat import add_chat, get_session, remove_chat
+from KanekiRobot.function.inlinehelper import arq
+from KanekiRobot.function.pluginhelpers import admins_only, edit_or_reply
+from KanekiRobot.services.pyrogram import pbot as kaneki
 
 translator = google_translator()
+
+
+async def lunaQuery(query: str, user_id: int):
+    luna = await arq.luna(query, user_id)
+    return luna.result
 
 
 def extract_emojis(s):
     return "".join(c for c in s if c in emoji.UNICODE_EMOJI)
 
-BOT_ID = 1844724306
+
+async def fetch(url):
+    try:
+        async with aiohttp.Timeout(10.0):
+            async with aiohttp.ClientSession() as session:
+                async with session.get(url) as resp:
+                    try:
+                        data = await resp.json()
+                    except:
+                        data = await resp.text()
+            return data
+    except:
+        print("AI response Timeout")
+        return
+
+
 Kaneki_chats = []
 en_chats = []
 # AI Chat (C) 2020-2021 by @InukaAsith
 
 
-@Kaneki.on_message(filters.command("chatbot") & ~filters.edited & ~filters.bot)
+@Kaneki.on_message(
+    filters.command("chatbot") & ~filters.edited & ~filters.bot & ~filters.private
+)
 @admins_only
 async def hmm(_, message):
-    global asuna_chats
+    global Kaneki_chats
     if len(message.command) != 2:
         await message.reply_text(
             "I only recognize `/chatbot on` and /chatbot `off only`"
@@ -86,12 +108,25 @@ async def hmm(_, message):
 
 
 @Kaneki.on_message(
-    filters.text & filters.reply & ~filters.bot & ~filters.via_bot & ~filters.forwarded,
+    filters.text
+    & filters.reply
+    & ~filters.bot
+    & ~filters.edited
+    & ~filters.via_bot
+    & ~filters.forwarded,
     group=2,
 )
 async def hmm(client, message):
-    if message.reply_to_message.from_user.id != BOT_ID:
-        message.continue_propagation()
+    if not get_session(int(message.chat.id)):
+        return
+    if not message.reply_to_message:
+        return
+    try:
+        senderr = message.reply_to_message.from_user.id
+    except:
+        return
+    if senderr != BOT_ID:
+        return
     msg = message.text
     chat_id = message.chat.id
     if msg.startswith("/") or msg.startswith("@"):
@@ -100,29 +135,19 @@ async def hmm(client, message):
         test = msg
         test = test.replace("Kaneki", "Aco")
         test = test.replace("Kaneki", "Aco")
-        querystring = {
-            "bid": "178",
-            "key": "sX5A2PcYZbsN5EY6",
-            "uid": "mashape",
-            "msg": {test},
-        }
-        headers = {
-            "x-rapidapi-key": "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
-            "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
-        }
-        response = requests.request("GET", url, headers=headers, params=querystring)
-        result = response.text
-        result = result.replace('{"cnt":"', "")
-        result = result.replace('"}', "")
-        result = result.replace("Aco", "Kaneki")
-        result = result.replace("<a href=\\", "<a href =")
-        result = result.replace("<\/a>", "</a>")
-        pro = result
+        response = await lunaQuery(
+            test, message.from_user.id if message.from_user else 0
+        )
+        response = response.replace("Aco", "Kaneki")
+        response = response.replace("aco", "Kaneki")
+
+        pro = response
         try:
             await Kaneki.send_chat_action(message.chat.id, "typing")
             await message.reply_text(pro)
-        except CFError as e:
-            print(e)
+        except CFError:
+            return
+
     else:
         u = msg.split()
         emj = extract_emojis(msg)
@@ -152,44 +177,46 @@ async def hmm(client, message):
         else:
             rm = msg
             # print (rm)
+        try:
             lan = translator.detect(rm)
+            lan = lan.lang
+        except:
+            return
         test = rm
         if not "en" in lan and not lan == "":
-            test = translator.translate(test, lang_tgt="en")
-
+            try:
+                test = translator.translate(test, dest="en")
+                test = test.text
+            except:
+                return
         # test = emoji.demojize(test.strip())
 
-        # Kang with the credits bitches @InukaASiTH
         test = test.replace("Kaneki", "Aco")
         test = test.replace("Kaneki", "Aco")
-        querystring = {
-            "bid": "178",
-            "key": "sX5A2PcYZbsN5EY6",
-            "uid": "mashape",
-            "msg": {test},
-        }
-        headers = {
-            "x-rapidapi-key": "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
-            "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
-        }
-        response = requests.request("GET", url, headers=headers, params=querystring)
-        result = response.text
-        result = result.replace('{"cnt":"', "")
-        result = result.replace('"}', "")
-        result = result.replace("Aco", "Kaneki")
-        result = result.replace("<a href=\\", "<a href =")
-        result = result.replace("<\/a>", "</a>")
-        pro = result
+        response = await lunaQuery(
+            test, message.from_user.id if message.from_user else 0
+        )
+        response = response.replace("Aco", "Kaneki")
+        response = response.replace("aco", "Kaneki")
+        response = response.replace("Luna", "Kaneki")
+        response = response.replace("luna", "Kaneki")
+        pro = response
         if not "en" in lan and not lan == "":
-            pro = translator.translate(pro, lang_tgt=lan[0])
+            try:
+                pro = translator.translate(pro, dest=lan)
+                pro = pro.text
+            except:
+                return
         try:
             await Kaneki.send_chat_action(message.chat.id, "typing")
             await message.reply_text(pro)
-        except CFError as e:
-            print(e)
+        except CFError:
+            return
 
 
-@Kaneki.on_message(filters.text & filters.private & filters.reply & ~filters.bot)
+@Kaneki.on_message(
+    filters.text & filters.private & ~filters.edited & filters.reply & ~filters.bot
+)
 async def inuka(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
@@ -222,52 +249,49 @@ async def inuka(client, message):
     else:
         rm = msg
         # print (rm)
+    try:
         lan = translator.detect(rm)
+        lan = lan.lang
+    except:
+        return
     test = rm
     if not "en" in lan and not lan == "":
-        test = translator.translate(test, lang_tgt="en")
+        try:
+            test = translator.translate(test, dest="en")
+            test = test.text
+        except:
+            return
 
     # test = emoji.demojize(test.strip())
 
     # Kang with the credits bitches @InukaASiTH
     test = test.replace("Kaneki", "Aco")
     test = test.replace("Kaneki", "Aco")
-    querystring = {
-        "bid": "178",
-        "key": "sX5A2PcYZbsN5EY6",
-        "uid": "mashape",
-        "msg": {test},
-    }
-    headers = {
-        "x-rapidapi-key": "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
-        "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
-    }
-    response = requests.request("GET", url, headers=headers, params=querystring)
-    result = response.text
-    result = result.replace('{"cnt":"', "")
-    result = result.replace('"}', "")
-    result = result.replace("Aco", "Kanekk")
-    result = result.replace("<a href=\\", "<a href =")
-    result = result.replace("<\/a>", "</a>")
-    pro = result
+
+    response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
+    response = response.replace("Aco", "Kaneki")
+    response = response.replace("aco", "Kaneki")
+
+    pro = response
     if not "en" in lan and not lan == "":
-        pro = translator.translate(pro, lang_tgt=lan[0])
+        pro = translator.translate(pro, dest=lan)
+        pro = pro.text
     try:
         await Kaneki.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
-    except CFError as e:
-        print(e)
+    except CFError:
+        return
 
 
 @Kaneki.on_message(
-    filters.regex("Kaneki|kaneki|huntinbots|hello|hi")
+    filters.regex("Kaneki|kaneki|Kontol|Kaneki|Sayang")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
     & ~filters.reply
-    & ~filters.channel  
+    & ~filters.channel
+    & ~filters.edited
 )
-
 async def inuka(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
@@ -300,38 +324,53 @@ async def inuka(client, message):
     else:
         rm = msg
         # print (rm)
+    try:
         lan = translator.detect(rm)
+        lan = lan.lang
+    except:
+        return
     test = rm
     if not "en" in lan and not lan == "":
-        test = translator.translate(test, lang_tgt="en")
+        try:
+            test = translator.translate(test, dest="en")
+            test = test.text
+        except:
+            return
 
     # test = emoji.demojize(test.strip())
 
-    # Kang with the credits bitches @InukaASiTH
     test = test.replace("Kaneki", "Aco")
     test = test.replace("Kaneki", "Aco")
-    querystring = {
-        "bid": "178",
-        "key": "sX5A2PcYZbsN5EY6",
-        "uid": "mashape",
-        "msg": {test},
-    }
-    headers = {
-        "x-rapidapi-key": "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
-        "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
-    }
-    response = requests.request("GET", url, headers=headers, params=querystring)
-    result = response.text
-    result = result.replace('{"cnt":"', "")
-    result = result.replace('"}', "")
-    result = result.replace("Aco", "Kaneki")
-    result = result.replace("<a href=\\", "<a href =")
-    result = result.replace("<\/a>", "</a>")
-    pro = result
+    response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
+    response = response.replace("Aco", "Kaneki")
+    response = response.replace("aco", "Kaneki")
+
+    pro = response
     if not "en" in lan and not lan == "":
-        pro = translator.translate(pro, lang_tgt=lan[0])
+        try:
+            pro = translator.translate(pro, dest=lan)
+            pro = pro.text
+        except Exception:
+            return
     try:
-        await kaneki.send_chat_action(message.chat.id, "typing")
+        await Kaneki.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
-    except CFError as e:
-        print(e)
+    except CFError:
+        return
+
+
+__help__ = """
+<b> Chatbot </b>
+KANEKI AI 3.0 IS THE ONLY AI SYSTEM WHICH CAN DETECT & REPLY UPTO 200 LANGUAGES
+
+ - /chatbot [ON/OFF]: Enables and disables AI Chat mode (EXCLUSIVE)
+ - /chatbot EN : Enables English only chatbot
+ 
+ 
+<b> Assistant </b>
+ - /ask [question]: Ask question from kaneki
+ - /ask [reply to voice note]: Get voice reply
+ 
+"""
+
+__mod_name__ = "AI Assistant"
