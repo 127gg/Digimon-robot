@@ -39,6 +39,7 @@ async def fetch(url):
         return
 
 
+BOT_ID = 1844724306
 kaneki_chats = []
 en_chats = []
 
@@ -116,7 +117,7 @@ async def hmm(client, message):
         test = msg
         test = test.replace("kaneki", "Aco")
         test = test.replace("kaneki", "Aco")
-        URL = "https://api.affiliateplus.xyz/api/chatbot?message=hi&botname=@kanekiexbot&ownername=@rizexx"
+        URL = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
 
         try:
             r = requests.request("GET", url=URL)
@@ -179,7 +180,7 @@ async def hmm(client, message):
         # Kang with the credits bitches @InukaASiTH
         test = test.replace("kaneki", "Aco")
         test = test.replace("kaneki", "Aco")
-        URL = f"https://api.affiliateplus.xyz/api/chatbot?message={test}&botname=@kanekiexbot&ownername=@rizexx"
+        URL = f"https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
         try:
             r = requests.request("GET", url=URL)
         except:
@@ -253,7 +254,7 @@ async def inuka(client, message):
     # Kang with the credits bitches @InukaASiTH
     test = test.replace("kaneki", "Aco")
     test = test.replace("kaneki", "Aco")
-    URL = f"https://api.affiliateplus.xyz/api/chatbot?message={test}&botname=@kanekiexbot&ownername=@rizexx"
+    URL = f"https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
     try:
         r = requests.request("GET", url=URL)
     except:
@@ -275,7 +276,7 @@ async def inuka(client, message):
 
 
 @kaneki.on_message(
-    filters.regex("kaneki|kaneki|kaneki|kaneki|kaneki")
+    filters.regex("Kaneki|kaneki|huntinbots|hello|hai")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
@@ -331,27 +332,32 @@ async def inuka(client, message):
     # Kang with the credits bitches @InukaASiTH
     test = test.replace("kaneki", "Aco")
     test = test.replace("kaneki", "Aco")
-    URL = f"https://api.affiliateplus.xyz/api/chatbot?message={test}&botname=@kanekiexbot&ownername=@rizexx"
-    try:
-        r = requests.request("GET", url=URL)
-    except:
-        return
-
-    try:
-        result = r.json()
-    except:
-        return
-    pro = result["message"]
+    URL = f"https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
+        querystring = {
+        "bid": "178",
+        "key": "sX5A2PcYZbsN5EY6",
+        "uid": "mashape",
+        "msg": {test},
+    }
+    headers = {
+        "x-rapidapi-key": "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
+        "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
+    }
+    response = requests.request("GET", url, headers=headers, params=querystring)
+    result = response.text
+    result = result.replace('{"cnt":"', "")
+    result = result.replace('"}', "")
+    result = result.replace("Aco", "Kaneki")
+    result = result.replace("<a href=\\", "<a href =")
+    result = result.replace("<\/a>", "</a>")
+    pro = result
     if not "en" in lan and not lan == "":
-        try:
-            pro = translator.translate(pro, lang_tgt=lan[0])
-        except Exception:
-            return
+        pro = translator.translate(pro, lang_tgt=lan[0])
     try:
-        await kaneki.send_chat_action(message.chat.id, "typing")
+        await evil.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
-    except CFError:
-        return
+    except CFError as e:
+        print(e)
 
 
 __help__ = """
