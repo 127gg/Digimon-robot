@@ -202,7 +202,9 @@
          "description": "Required for wallpaper. Get your's from https://wall.alphacoders.com/",
          "required": false,
          "value": ""
-      }
-      
+      },
+      "BOT_USERNAME": {
+         "description": "Enter You bot username.",
+         "value": ""
    }
 }
