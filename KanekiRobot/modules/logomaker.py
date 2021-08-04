@@ -7,7 +7,7 @@ from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterPhotos
 
 
-@kaneki_cmd(pattern="logo ?(.*)")
+@KanekiRobot_cmd(pattern="logo ?(.*)")
 async def logo_gen(event):
     xx = await eor(event, get_string("com_1"))
     name = event.pattern_match.group(1)
