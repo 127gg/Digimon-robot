@@ -200,8 +200,6 @@ else:
         sw = None
         LOGGER.warning("Can't connect to SpamWatch!")
 
-api_id = API_ID
-api_hash = API_HASH
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("kaneki", API_ID, API_HASH)
 pbot = Client("kanekipbot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
