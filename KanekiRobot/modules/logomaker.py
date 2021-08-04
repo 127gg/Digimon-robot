@@ -2,7 +2,7 @@ import glob
 import os
 import random
 
-from KanekiRobotRobot.events import register
+from KanekiRobot.events import register
 from telegram.ext import run_async
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterPhotos
