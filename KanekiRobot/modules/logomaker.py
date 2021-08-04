@@ -80,7 +80,7 @@ async def logo_gen(event):
         await event.client.send_file(
             event.chat_id,
             file=flnme,
-            caption=f"Logo by [{OWNER_NAME}](tg://user?id={OWNER_ID})",
+            caption=f"Logo by @kanekiexbot",
             force_document=True,
         )
         os.remove(flnme)
