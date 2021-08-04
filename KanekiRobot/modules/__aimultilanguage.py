@@ -79,20 +79,20 @@ async def hmm(_, message):
         lel = await edit_or_reply(message, "`Processing...`")
         lol = add_chat(int(message.chat.id))
         if not lol:
-            await lel.edit("Kaneki AI Already Activated In This Chat")
+            await lel.edit("`Kaneki AI Already Activated In This Chat`")
             return
         await lel.edit(
-            f"Kaneki AI Successfully Added For Users In The Chat {message.chat.id}"
+            f"`Kaneki AI Successfully Added For Users In The Chat` `{message.chat.id}`"
         )
 
     elif status == "OFF" or status == "off" or status == "Off":
         lel = await edit_or_reply(message, "`Processing...`")
         Escobar = remove_chat(int(message.chat.id))
         if not Escobar:
-            await lel.edit("Kaneki AI Was Not Activated In This Chat")
+            await lel.edit("`Kaneki AI Was Not Activated In This Chat`")
             return
         await lel.edit(
-            f"Kaneki AI Successfully Deactivated For Users In The Chat {message.chat.id}"
+            f"`Kaneki AI Successfully Deactivated For Users In The Chat` `{message.chat.id}`"
         )
 
     elif status == "EN" or status == "en" or status == "english":
@@ -285,7 +285,7 @@ async def inuka(client, message):
 
 
 @kaneki.on_message(
-    filters.regex("Kaneki|kaneki|Kontol|Kaneki|Sayang")
+    filters.regex("Kaneki|@rizexx|Kontol|memek|Sayang|Assalamualaikum|Hai|ganteng|robot|bot|Waalaikumsallam")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
@@ -361,17 +361,16 @@ async def inuka(client, message):
 
 
 __help__ = """
-<b> Chatbot </b>
-KANEKI IS THE ONLY AI SYSTEM WHICH CAN DETECT & REPLY UPTO 200 LANGUAGES
+• Chatbot 
+Kaneki is the only ai system which can detect & reply upto 200 language's
 
  - /chatbot [ON/OFF]: Enables and disables AI Chat mode (EXCLUSIVE)
  - /chatbot EN : Enables English only chatbot
- 
- 
-<b> Assistant </b>
+  
+• Assistant 
  - /ask [question]: Ask question from kaneki
  - /ask [reply to voice note]: Get voice reply
  
 """
 
-__mod_name__ = "AI Assistant"
+__mod_name__ = "ᴄʜᴀᴛʙᴏᴛ"
