@@ -12,7 +12,7 @@ from telegram import (
 from KanekiRobot import dispatcher
 from KanekiRobot import pbot, BOT_USERNAME
 from pyrogram import filters
-from KanekiRobot.types import Message
+from pyrogram.types import Message
 from KanekiRobot.modules.disable import DisableAbleCommandHandler
 
 
