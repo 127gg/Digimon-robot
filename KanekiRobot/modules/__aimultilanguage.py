@@ -57,17 +57,17 @@ async def fetch(url):
 
 
 BOT_ID = 1844724306
-Kaneki_chats = []
+kaneki_chats = []
 en_chats = []
 # AI Chat (C) 2020-2021 by @InukaAsith
 
 
-@Kaneki.on_message(
+@kaneki.on_message(
     filters.command("chatbot") & ~filters.edited & ~filters.bot & ~filters.private
 )
 @admins_only
 async def hmm(_, message):
-    global Kaneki_chats
+    global kaneki_chats
     if len(message.command) != 2:
         await message.reply_text(
             "I only recognize `/chatbot on` and /chatbot `off only`"
@@ -108,7 +108,7 @@ async def hmm(_, message):
         )
 
 
-@Kaneki.on_message(
+@kaneki.on_message(
     filters.text
     & filters.reply
     & ~filters.bot
@@ -144,7 +144,7 @@ async def hmm(client, message):
 
         pro = response
         try:
-            await Kaneki.send_chat_action(message.chat.id, "typing")
+            await kaneki.send_chat_action(message.chat.id, "typing")
             await message.reply_text(pro)
         except CFError:
             return
@@ -209,13 +209,13 @@ async def hmm(client, message):
             except:
                 return
         try:
-            await Kaneki.send_chat_action(message.chat.id, "typing")
+            await kaneki.send_chat_action(message.chat.id, "typing")
             await message.reply_text(pro)
         except CFError:
             return
 
 
-@Kaneki.on_message(
+@kaneki.on_message(
     filters.text & filters.private & ~filters.edited & filters.reply & ~filters.bot
 )
 async def inuka(client, message):
@@ -284,7 +284,7 @@ async def inuka(client, message):
         return
 
 
-@Kaneki.on_message(
+@kaneki.on_message(
     filters.regex("Kaneki|kaneki|Kontol|Kaneki|Sayang")
     & ~filters.bot
     & ~filters.via_bot
@@ -354,7 +354,7 @@ async def inuka(client, message):
         except Exception:
             return
     try:
-        await Kaneki.send_chat_action(message.chat.id, "typing")
+        await kaneki.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
     except CFError:
         return
@@ -362,7 +362,7 @@ async def inuka(client, message):
 
 __help__ = """
 <b> Chatbot </b>
-KANEKI AI 3.0 IS THE ONLY AI SYSTEM WHICH CAN DETECT & REPLY UPTO 200 LANGUAGES
+KANEKI IS THE ONLY AI SYSTEM WHICH CAN DETECT & REPLY UPTO 200 LANGUAGES
 
  - /chatbot [ON/OFF]: Enables and disables AI Chat mode (EXCLUSIVE)
  - /chatbot EN : Enables English only chatbot
