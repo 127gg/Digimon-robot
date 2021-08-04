@@ -2,6 +2,9 @@ import html
 import random
 import time
 from typing import List
+import emoji
+import requests
+import asyncio
 
 from telegram import Bot, Update, ParseMode
 from telegram.ext import run_async
