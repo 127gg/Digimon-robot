@@ -2,12 +2,13 @@ import glob
 import os
 import random
 
+from KanekiRobotRobot.events import register
 from telegram.ext import run_async
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterPhotos
 
 
-@KanekiRobot_cmd(pattern="logo ?(.*)")
+@register(pattern="logo ?(.*)")
 async def logo_gen(event):
     xx = await eor(event, get_string("com_1"))
     name = event.pattern_match.group(1)
