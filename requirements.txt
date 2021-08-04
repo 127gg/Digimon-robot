@@ -73,3 +73,4 @@ opencv-python-headless
 googletrans==4.0.0-rc1
 pykeyboard
 Python_ARQ
+httpx[http2]
