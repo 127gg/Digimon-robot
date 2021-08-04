@@ -19,7 +19,7 @@ from KanekiRobot.modules.disable import DisableAbleCommandHandler
 trans = Translator()
 
 
-@pgram.on_message(filters.command(["tr", f"tr@{BOT_USERNAME}"]))
+@pbot.on_message(filters.command(["tr", f"tr@{BOT_USERNAME}"]))
 async def translate(_, message: Message) -> None:
     reply_msg = message.reply_to_message
     if not reply_msg:
