@@ -26,7 +26,7 @@ from pyrogram import filters
 from KanekiRobot import BOT_ID
 from KanekiRobot.helper_extra.aichat import add_chat, get_session, remove_chat
 from KanekiRobot.pyrogramee.inlinehelper import arq
-from KanekiRobot.pyrogramee.pluginhelpers import admins_only, edit_or_reply
+from KanekiRobot.pyrogramee.pluginshelper import admins_only, edit_or_reply
 from KanekiRobot.pyrogramee.pyrogram import pbot as kaneki
 
 translator = google_translator()
