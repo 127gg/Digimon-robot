@@ -13,7 +13,6 @@ from telegram.ext import CommandHandler, CallbackContext
 from KanekiRobot import dispatcher
 from KanekiRobot.modules.disable import DisableAbleCommandHandler
 from KanekiRobot.modules.helper_funsc.chat_status import is_user_admin, user_admin
-from KanekiRobot.modules.helper_funsc.extraction import extract
 
 #sleep how many times after each edit in 'love' 
 EDIT_SLEEP = 1
