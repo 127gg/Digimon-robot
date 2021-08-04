@@ -3,7 +3,7 @@ from googletrans import Translator, LANGUAGES
 
 from telegram import Bot, Update, ParseMode
 from telegram.ext import run_async
-
+from telegram.ext import CallbackContext, run_async
 from KanekiRobot import dispatcher
 from KanekiRobot.modules.disable import DisableAbleCommandHandler
 
