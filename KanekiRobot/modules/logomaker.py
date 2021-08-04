@@ -22,7 +22,7 @@ async def lego(event):
  await event.reply('Creating your logo...wait!')
  try:
     pics = []
-        async for i in event.client.iter_messages(
+        async for i in event.client.filter_messages(
             "@Kanekilogo", filter=InputMessagesFilterPhotos
         ):
             pics.append(i)  
@@ -68,7 +68,7 @@ async def lego(event):
  await event.reply('Creating your logo...wait!')
  try:
     pics = []
-        async for i in event.client.iter_messages(
+        async for i in event.client.filter_messages(
             "@Kanekilogo", filter=InputMessagesFilterPhotos
         ):
             pics.append(i) 
