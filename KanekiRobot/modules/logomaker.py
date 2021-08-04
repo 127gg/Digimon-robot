@@ -3,8 +3,6 @@ import os
 import random
 
 from telegram.ext import run_async
-from KanekiRobot.events import register
-from KanekiRobot import telethn as tbot
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterPhotos
 
