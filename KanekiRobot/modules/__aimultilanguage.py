@@ -199,8 +199,8 @@ async def hmm(client, message):
         )
         response = response.replace("Aco", "Kaneki")
         response = response.replace("aco", "Kaneki")
-        response = response.replace("Luna", "Kaneki")
-        response = response.replace("luna", "Kaneki")
+        response = response.replace("id", "Kaneki")
+        response = response.replace("ID", "Kaneki")
         pro = response
         if not "en" in lan and not lan == "":
             try:
@@ -285,7 +285,7 @@ async def inuka(client, message):
 
 
 @kaneki.on_message(
-    filters.regex("Kaneki|@rizexx|Kontol|memek|Sayang|Assalamualaikum|Hai|ganteng|robot|bot|Waalaikumsallam")
+    filters.regex("Kaneki|rizky|Kontol|memek|Sayang|Assalamualaikum|Hai|ganteng|robot|bot|Waalaikumsallam|kaneki|anj|mana|apa|iya|woi|oi|bagus")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
