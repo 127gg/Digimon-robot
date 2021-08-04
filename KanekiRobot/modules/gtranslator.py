@@ -10,7 +10,7 @@ from telegram import (
     InlineKeyboardButton,
 )
 from KanekiRobot import dispatcher
-from KanekiRobot import pgram, BOT_USERNAME
+from KanekiRobot import pbot, BOT_USERNAME
 from pyrogram import filters
 from KanekiRobot.types import Message
 from KanekiRobot.modules.disable import DisableAbleCommandHandler
