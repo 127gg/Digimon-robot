@@ -190,11 +190,10 @@ DEV_USERS.add(OWNER_ID)
 DEV_USERS.add(1817146787)
 DEV_USERS.add(1845774133)
 
-# Telethon
-api_id = TELETHON_ID
-api_hash = TELETHON_HASH
-print("[KanekiRobot]: TELETHON CLIENT STARTING")
-telethn = TelegramClient("kanekiexbot", api_id, api_hash)
+api_id = API_ID
+api_hash = API_HASH
+print("[KanekiRobot]: INITIALZING AIOHTTP SESSION")
+telethn = TelegramClient("kanekiexbot", API_ID, API_HASH)
 print("[INFO]: INITIALZING AIOHTTP SESSION")
 aiohttpsession = ClientSession()
 print("[INFO]: INITIALIZING ARQ CLIENT")
