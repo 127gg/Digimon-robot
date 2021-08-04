@@ -8,6 +8,8 @@ from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterPhotos
 from KanekiRobot import telethn as tbot 
 
+from.import*
+
 
 @register(pattern="logo ?(.*)")
 async def logo_gen(event):
