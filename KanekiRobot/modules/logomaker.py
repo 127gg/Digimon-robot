@@ -26,8 +26,8 @@ async def lego(event):
             "@Kanekilogo", filter=InputMessagesFilterPhotos
         ):
             pics.append(i)  
-    id_ = random.choice(pics)
-    bg_ = await id_.download_media()  
+    id = random.choice(pics)
+    bg = await id_.download_media()  
     text = event.pattern_match.group(1)
     img = Image.open(bg)
     draw = ImageDraw.Draw(img)
@@ -72,8 +72,8 @@ async def lego(event):
             "@Kanekilogo", filter=InputMessagesFilterPhotos
         ):
             pics.append(i) 
-    id_ = random.choice(pics)
-    bg_ = await id_.download_media()
+    id = random.choice(pics)
+    bg = await id_.download_media()
     text = event.pattern_match.group(1)
     img = Image.open(bg)
     draw = ImageDraw.Draw(img)
