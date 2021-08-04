@@ -75,3 +75,4 @@ pykeyboard
 Python_ARQ
 httpx[http2]
 gpytranslate
+*
