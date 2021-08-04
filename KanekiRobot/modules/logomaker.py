@@ -6,8 +6,6 @@ from telegram.ext import run_async
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterPhotos
 
-from . import *
-
 
 @kaneki_cmd(pattern="logo ?(.*)")
 async def logo_gen(event):
