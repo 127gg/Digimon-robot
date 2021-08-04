@@ -7,11 +7,12 @@ import requests
 import asyncio
 
 from telegram import Bot, Update, ParseMode
-from telegram.ext import CallbackContext, run_async
+from telegram.ext import run_async
 
 from KanekiRobot import dispatcher
 from KanekiRobot.modules.disable import DisableAbleCommandHandler
 from KanekiRobot.modules.helper_funsc.chat_status import is_user_admin, user_admin
+
 
 #sleep how many times after each edit in 'love' 
 EDIT_SLEEP = 1
