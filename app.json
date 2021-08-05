@@ -63,7 +63,7 @@
       },
       "HEROKU_APP_NAME": {
         "description": "Enter the Heroku app name here (Must an exact same name with your input above).",
-        "required": false
+        "value": ""
       },
       "OWNER_USERNAME": {
          "description": "Your username without the @",
@@ -158,7 +158,7 @@
       "PORT": {
          "description": "Port to use for your webhooks. Better leave this as it is on heroku",
          "required": false,
-         "value": ""
+         "value": "8080"
       },
       "URL": {
          "description": "The Heroku App URL :-  https://<appname>.herokuapp.com/",
@@ -207,16 +207,6 @@
          "description": "Enter You bot username.",
          "required": false,
          "value": ""
-      },
-      "ARQ_API_KEY": {
-          "description": "Ambil api dari bot telegram » t.me/ARQRobot atau @ARQRobot",
-          "required": true,
-          "value": ""
-      },
-      "BOT_ID": {
-          "description": "id dari bot kamu",
-          "required": true,
-          "value": ""
       },
       "IBM_WATSON_CRED_PASSWORD": {
           "description": "ya saja bang",
