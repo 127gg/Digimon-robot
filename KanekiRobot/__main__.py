@@ -75,7 +75,8 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 `ʜᴀɪ, ɪ'ᴍ ᴋᴀɴᴇᴋɪ ᴀ ᴘᴏᴡᴇʀғᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ʙᴜɪʟᴛ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴇᴀsɪʟʏ.`
-• `ᴛʀʏ` /help `ᴛᴏ sᴇᴇ ᴛʜᴇ` [`ғᴇᴀᴛᴜʀᴇs`](https://telegra.ph/file/49bedc5476df21845f7c5.jpg)
+• `ᴛʀʏ` /help `ᴛᴏ sᴇᴇ ᴛʜᴇ ғᴇᴀᴛᴜʀᴇs`
+`ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ` [ᴇx](https://t.me/rizexx)
 """
 
 buttons = [
@@ -103,7 +104,7 @@ buttons = [
 
 HELP_STRINGS = """
 `ʜᴀɪ, ɪ'ᴍ ᴋᴀɴᴇᴋɪ`
-`ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴏᴄᴜᴍᴇɴᴛᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ꜱᴘᴇᴄɪꜰɪᴄ ᴍᴏᴅᴜʟᴇꜱ`[.](https://telegra.ph/file/5bae048976aac964b9ca1.jpg)
+`ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴏᴄᴜᴍᴇɴᴛᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ꜱᴘᴇᴄɪꜰɪᴄ ᴍᴏᴅᴜʟᴇꜱ`[.](https://telegra.ph/file/4e385c3930513081c0b6e.jpg)
 """
 
 Kaneki_IMG = "https://telegra.ph/file/3486eca568218cdb74f24.jpg"
