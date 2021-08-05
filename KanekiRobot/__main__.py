@@ -75,8 +75,7 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 `ʜᴀɪ, ɪ'ᴍ ᴋᴀɴᴇᴋɪ ᴀ ᴘᴏᴡᴇʀғᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ʙᴜɪʟᴛ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴇᴀsɪʟʏ.`
-• `ᴛʀʏ` /help `ᴛᴏ sᴇᴇ ᴛʜᴇ ғᴇᴀᴛᴜʀᴇs`
-`ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ` [ʀɪᴢ-ᴇx](https://t.me/rizexx)
+• `ᴛʀʏ` /help `ᴛᴏ sᴇᴇ ᴛʜᴇ` [`ғᴇᴀᴛᴜʀᴇs`](https://telegra.ph/file/49bedc5476df21845f7c5.jpg)
 """
 
 buttons = [
@@ -104,14 +103,14 @@ buttons = [
 
 HELP_STRINGS = """
 `ʜᴀɪ, ɪ'ᴍ ᴋᴀɴᴇᴋɪ`
-`ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴏᴄᴜᴍᴇɴᴛᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ꜱᴘᴇᴄɪꜰɪᴄ ᴍᴏᴅᴜʟᴇꜱ`[.](https://telegra.ph/file/3486eca568218cdb74f24.jpg)
+`ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴏᴄᴜᴍᴇɴᴛᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ꜱᴘᴇᴄɪꜰɪᴄ ᴍᴏᴅᴜʟᴇꜱ`[.](https://telegra.ph/file/5bae048976aac964b9ca1.jpg)
 """
 
 Kaneki_IMG = "https://telegra.ph/file/3486eca568218cdb74f24.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
  You can support the project [riz-ex](t.me/rizexx) \
- Supporting isnt always financial! [All about music](t.me/nyanyiisinii) \
+ Supporting isnt always financial! [Kaneki Support Group](t.me/kanekisupport) \
  Those who cannot provide monetary support are welcome to help us develop the bot at ."""
 
 IMPORTED = {}
