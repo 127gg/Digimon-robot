@@ -25,7 +25,7 @@ async def lego(event):
     pointsize = 500
     fillcolor = "gold"
     shadowcolor = "blue"
-    font = ImageFont.truetype("./KanekiRobot/riz-ex/fonts/10.ttf')
+    font = ImageFont.truetype("./KanekiRobot/resources/Maghrib.ttf')
     w, h = draw.textsize(text, font=font)
     h += int(h*0.21)
     image_width, image_height = img.size
@@ -63,7 +63,7 @@ async def lego(event):
     pointsize = 500
     fillcolor = "white"
     shadowcolor = "blue"
-    font = ImageFont.truetype("./KanekiRobot/riz-ex/fonts/9.ttf')
+    font = ImageFont.truetype("./KanekiRobot/resources/Maghrib.ttf')
     w, h = draw.textsize(text, font=font)
     h += int(h*0.21)
     image_width, image_height = img.size
@@ -77,7 +77,7 @@ async def lego(event):
     if os.path.exists(fname2):
             os.remove(fname2)
  except Exception as e:
-   await event.reply(f'Error Report @kanekisupport, {e}')
+   await event.reply(f'`Error Report` @kanekisupport, {e}')
 
 file_help = os.path.basename(__file__)
 file_help = file_help.replace(".py", "")
