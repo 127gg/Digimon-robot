@@ -97,7 +97,7 @@ if ENV:
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
     GBAN_LOGS = os.environ.get('GBAN_LOGS', None)
     ARQ_API_URL = "https://thearq.tech"
-    ARQ_API_KEY = "CXSIJZ-YVECWA-HTNWVA-GBLDPQ-ARQ"
+    ARQ_API_KEY = "HPNQKW-EXDNMV-PHFLOH-YHTYOQ-ARQ"
 
 
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
