@@ -8,6 +8,12 @@ import asyncio
 
 from telegram import Bot, Update, ParseMode
 from telegram.ext import run_async
+from telegram.ext import (
+    CallbackContext,
+    CommandHandler,
+    Filters,
+    MessageHandler,
+    RegexHandler,
 
 from KanekiRobot import dispatcher
 from KanekiRobot.modules.disable import DisableAbleCommandHandler
