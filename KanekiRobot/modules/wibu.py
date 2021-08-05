@@ -36,7 +36,7 @@ def asupan(update: Update, context: CallbackContext):
         reply_markup=keyboard,
         parse_mode=ParseMode.HTML,
     )
-def change_quote(update: Update, context: CallbackContext):
+def wibu(update: Update, context: CallbackContext):
     query = update.callback_query
     chat = update.effective_chat
     message = update.effective_message
