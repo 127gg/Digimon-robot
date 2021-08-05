@@ -199,8 +199,8 @@ async def hmm(client, message):
         )
         response = response.replace("Aco", "Kaneki")
         response = response.replace("aco", "Kaneki")
-        response = response.replace("id", "Kaneki")
-        response = response.replace("ID", "Kaneki")
+        response = response.replace("Luna", "Kaneki")
+        response = response.replace("luna", "Kaneki")
         pro = response
         if not "en" in lan and not lan == "":
             try:
