@@ -219,7 +219,7 @@
       "value": ""
       },
       "IBM_WATSON_CRED_PASSWORD": {
-      "description": "ya saja bang"
+      "description": "ya saja bang",
       "required": false,
       "value": "UQ1MtTzZhEsMGK094klnfa-7y_4MCpJY1yhd52MXOo3Y"
 
