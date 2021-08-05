@@ -16,7 +16,6 @@ from telegram.ext import (
     RegexHandler,
 
 from KanekiRobot import dispatcher
-from KanekiRobot.modules.disable import DisableAbleCommandHandler
 from KanekiRobot.modules.helper_funsc.chat_status import is_user_admin, user_admin
 
 
