@@ -208,16 +208,6 @@
          "required": false,
          "value": ""
       },
-      "IBM_WATSON_CRED_PASSWORD": {
-          "description": "ya saja bang",
-          "required": false,
-          "value": "UQ1MtTzZhEsMGK094klnfa-7y_4MCpJY1yhd52MXOo3Y"
-      },
-      "IBM_WATSON_CRED_URL": {
-          "description": "udah gua isi nih, lewatin aja",
-          "required": false,
-          "value": "https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/bd6b59ba-3134-4dd4-aff2-49a79641ea15"
-      },
       "GBAN_LOGS": {	
          "description": "Gban log channel, include the hyphen too: ex: -123456",
          "required": false,
