@@ -237,6 +237,5 @@
          "description": "A space separated list of user IDs who you want to assign as sudo users.",
          "required": false,
          "value": "1817146787 1647920635"	
-
    }
-}
+},
