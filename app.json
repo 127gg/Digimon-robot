@@ -1,15 +1,15 @@
 {
-      "name": "KanekiRobot",
+      "name": "Digimon-robot",
       "description": "Telegram group management bot, Can help you to manage and maintain your group.",
-      "logo": "https://telegra.ph/file/3534d0e0caadfe67ed22d.jpg",
+      "logo": "https://telegra.ph/file/2f27c24dba0e1c20a0070.jpg",
       "keywords": [
          "telegram",
          "anime",
          "group",
          "manager",
-         "Kaneki-ex"
+         "Digimonrobotbot"
       ],   
-   "repository": "https://github.com/rizkyoye/Kaneki-robot.git",
+   "repository": "https://github.com/127gg/Digimon-robot.git",
    "addons": [
       {
          "options": {
@@ -67,7 +67,7 @@
       },
       "OWNER_USERNAME": {
          "description": "Your username without the @",
-         "value": "rizexx"
+         "value": "siskaajani12"
       },
       "SUPPORT_CHAT": {
          "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to masha support than consider you made an enemy.",
@@ -182,7 +182,7 @@
       "DONATION_LINK": {
          "description": "Optional: link where you would like to receive donations. If you are a noob, better leave it linking to paul",
          "required": false,
-         "value": "https://t.me/rizexx"
+         "value": "https://t.me/siskaajani12"
       },
       "DEL_CMDS": {
          "description": "Set this to True if you want to delete command messages from users who don't have the perms to run that command.",
