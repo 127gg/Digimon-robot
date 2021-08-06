@@ -76,16 +76,16 @@ def get_readable_time(seconds: int) -> str:
 PM_START_TEXT = """
 `ʜᴀɪ, ɪ'ᴍ ᴋᴀɴᴇᴋɪ ᴀ ᴘᴏᴡᴇʀғᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ʙᴜɪʟᴛ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴇᴀsɪʟʏ.`
 • `ᴛʀʏ` /help `ᴛᴏ sᴇᴇ ᴛʜᴇ ғᴇᴀᴛᴜʀᴇs`
-`ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ` [ᴇx](https://t.me/rizexx)
+`ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ` [ᴇx](https://t.me/siskaajani12)
 """
 
 buttons = [
         [
         InlineKeyboardButton(
-            text="➕️ ᴀᴅᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕️", url="t.me/kanekiexbot?startgroup=true"),
+            text="➕️ ᴀᴅᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕️", url="t.me/Digimonrobotbot?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="Kaneki_"),
+        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="Digimon_"),
         InlineKeyboardButton(
             text="ᴄʜᴀɴɴᴇʟ ɪɴғᴏ", url=f"https://t.me/rizexproject"
         ),
@@ -93,7 +93,7 @@ buttons = [
     [
         InlineKeyboardButton(text="ɢʀᴏᴜᴘ sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/kanekisupport"),
         InlineKeyboardButton(
-            text="ᴄʀᴇᴀᴛᴏʀ", url=f"https://t.me/rizexx"
+            text="ᴄʀᴇᴀᴛᴏʀ", url=f"https://t.me/siskaajani12"
         ),
     ],
     [
@@ -103,14 +103,14 @@ buttons = [
 
 
 HELP_STRINGS = """
-`ʜᴀɪ, ɪ'ᴍ ᴋᴀɴᴇᴋɪ`
-`ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴏᴄᴜᴍᴇɴᴛᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ꜱᴘᴇᴄɪꜰɪᴄ ᴍᴏᴅᴜʟᴇꜱ`[.](https://telegra.ph/file/4e385c3930513081c0b6e.jpg)
+`ʜᴀɪ, ɪ'ᴍ Digimon`
+`ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴏᴄᴜᴍᴇɴᴛᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ꜱᴘᴇᴄɪꜰɪᴄ ᴍᴏᴅᴜʟᴇꜱ`[.](https://telegra.ph/file/2f27c24dba0e1c20a0070.jpg)
 """
 
-Kaneki_IMG = "https://telegra.ph/file/3486eca568218cdb74f24.jpg"
+Digimon_IMG = "https://telegra.ph/file/2f27c24dba0e1c20a0070.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project [riz-ex](t.me/rizexx) \
+ You can support the project [riz-ex](t.me/siskaajani12) \
  Supporting isnt always financial! [Kaneki Support Group](t.me/kanekisupport) \
  Those who cannot provide monetary support are welcome to help us develop the bot at ."""
 
@@ -392,7 +392,7 @@ def Source_about_callback(update, context):
     if query.data == "source_":
         query.message.edit_text(
             text=""" `heyo i'm kaneki`
-                 \nHere is the [Source Code](https://github.com/rizkyoye/Kaneki-robot) .""",
+                 \nHere is the [Source Code](https://github.com/127gg/Digimon-robot) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
