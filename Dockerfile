@@ -64,12 +64,12 @@ RUN apt update && apt upgrade -y && \
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
-# Copy Python Requirements to /root/KanekiRobot
-RUN git clone -b shiken https://github.com/rizkyoye/Kaneki-robot /root/Kaneki-robot
-WORKDIR /root/KanekiRobot
+# Copy Python Requirements to /root/DigimonRobot
+RUN git clone -b shiken https://github.com/127gg/Digimon-robot /root/Digimon-robot
+WORKDIR /root/DigimonRobot
 
-#Copy config file to /root/KanekiRobot/KanekiRobot
-COPY ./KanekiRobot/sample_config.py ./KanekiRobot/config.py* /root/KanekiRobot/KanekiRobot/
+#Copy config file to /root/DigimonRobot/DigimonRobot
+COPY ./DigimonRobot/sample_config.py ./DigimonRobot/config.py* /root/DigimonRobot/DigimonRobot/
 
 ENV PATH="/home/bot/bin:$PATH"
 
